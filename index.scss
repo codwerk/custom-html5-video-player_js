@@ -2,29 +2,73 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-button {
-  border: none;
-  background: none;
-  outline: none;
-  cursor: pointer;
+  color: #ffffff;
 }
 
 .player {
-  width: 60%;
+  max-width: 750px;
   margin: auto;
+  position: relative;
+  overflow: hidden;
 
-  video {
-    height: 349px;
+  &:hover {
+    .player__controls {
+      transform: translateY(-100%);
+      .progress {
+        height: 15px;
+      }
+    }
+    
+  }
+
+  .player__video {
+    width: 100%;
   }
 
   .player__controls {
     display: flex;
     flex-direction: column;
+    position: absolute;
+    width: 100%;
+    transition: all .5s ease;
+    transform: translateY(-35%);
+
+    .progress {
+      height: 10px;
+      width: 100%;
+      background: #717790;
+
+      .progress__filled {
+        background: #df0037;
+        height: 100%;
+        width: 0;
+      }
+    }
 
     .player__options {
-      width: 100%;
+     padding: 5px;
+
+      .player__button {
+        background: none;
+        border: 0;
+        line-height: 1;
+        color: white;
+        text-align: center;
+        outline: 0;
+        padding: 0;
+        cursor: pointer;
+        width: 50px;
+      }
+
+      .player__slider {
+        
+      }
+
+      .player__button {
+        &:focus {
+          border-color: #ffc600;
+        }
+      }
     }
   }
 }

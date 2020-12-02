@@ -2,19 +2,22 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
-button {
-  border: none;
-  background: none;
-  outline: none;
-  cursor: pointer; }
+  box-sizing: border-box;
+  color: #ffffff; }
 
 .player {
-  width: 60%;
-  margin: auto; }
-  .player video {
-    height: 349px; }
+  max-width: 750px;
+  margin: auto;
+  position: relative;
+  overflow: hidden; }
+  .player:hover .player__controls {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%); }
+    .player:hover .player__controls .progress {
+      height: 15px; }
+  .player .player__video {
+    width: 100%; }
   .player .player__controls {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -22,6 +25,34 @@ button {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    -webkit-transform: translateY(-35%);
+    -ms-transform: translateY(-35%);
+    transform: translateY(-35%); }
+    .player .player__controls .progress {
+      height: 10px;
+      width: 100%;
+      background: #717790; }
+      .player .player__controls .progress .progress__filled {
+        background: #df0037;
+        height: 100%;
+        width: 0; }
     .player .player__controls .player__options {
-      width: 100%; }
+      padding: 5px; }
+      .player .player__controls .player__options .player__button {
+        background: none;
+        border: 0;
+        line-height: 1;
+        color: white;
+        text-align: center;
+        outline: 0;
+        padding: 0;
+        cursor: pointer;
+        width: 50px; }
+      .player .player__controls .player__options .player__button:focus {
+        border-color: #ffc600; }
