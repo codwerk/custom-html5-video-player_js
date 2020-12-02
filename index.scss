@@ -1,0 +1,30 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.player {
+  width: 60%;
+  margin: auto;
+
+  video {
+    height: 349px;
+  }
+
+  .player__controls {
+    display: flex;
+    flex-direction: column;
+
+    .player__options {
+      width: 100%;
+    }
+  }
+}
